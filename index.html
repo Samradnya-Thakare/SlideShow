@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow</title>
+    <style>
+        .container {
+            width: fit-content;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .slide {
+            height: 600px;
+            width: 400px;
+            object-fit: cover;
+        }
+
+        .icon-action {
+            height: 80px;
+            position: absolute;
+            top: 40%;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .icon-back {
+            left: 0;
+        }
+
+        .icon-back:hover {
+            transform: scale(0.8) translateX(-10px);
+        }
+
+        .icon-next {
+            right: 0;
+        }
+
+        .icon-next:hover {
+            transform: scale(0.8)translateX(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="img/photo1.png" class="slide" id="slide">
+        <img src="img/back.png" class="icon-action icon-back" onclick="back()">
+        <img src="img/next.png" class="icon-action icon-next" onclick="next()">
+    </div>
+    <script>
+        const images = ["img/photo2.png", "img/photo3.png", "img/photo4.png", "img/photo5.png", "img/photo6.png", "img/photo7.png", "img/photo8.png", "img/photo9.png", "img/photo10.png"];
+
+        let index = 0;
+
+        const slide = document.getElementById('slide');
+        function next() {
+            if (index < images.length - 1) {
+                index++
+            }
+            else {
+                index = 0
+            }
+            slide.src = images[index]
+        }
+        function back() {
+            if (index > 0) {
+                index--
+            }
+            else {
+                index = images.length - 1;
+            }
+            slide.src = images[index]
+        }
+        setInterval(next, 2000);
+    </script>
+</body>
+
+</html>
