@@ -1,0 +1,35 @@
+.container {
+    width: fit-content;
+    margin: 50px auto;
+    position: relative;
+}
+
+.slide {
+    height: 600px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.icon-action {
+    height: 70px;
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.icon-back {
+    left: 0;
+}
+
+.icon-back:hover {
+    transform: scale(0.8) translateX(-10px);
+}
+
+.icon-next {
+    right: 0;
+}
+
+.icon-next:hover {
+    transform: scale(0.8)translateX(10px);
+}
